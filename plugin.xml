@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.icsfl.rfsmart.tc55" 
+        version="0.1.0">
+    <name>TC55</name>
+    <description>TC55 Plugin</description>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <js-module src="www/tc55.js" name="CordovaTC55Plugin">
+        <clobbers target="plugins.CordovaTC55Plugin" />
+    </js-module>
+
+    <!--android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CordovaTC55Plugin">
+                <param name="android-package" value="com.icsfl.rfsmart.tc55.CordovaTC55Plugin"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+            <intent-filter>
+                <action android:name="com.icsfl.rfsmart.RECVR"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </config-file>
+
+        <source-file src="src/android/com/icsfl/rfsmart/tc55/CordovaTC55Plugin.java" target-dir="src/com/icsfl/rfsmart/tc55" />
+    </platform>
+</plugin>
