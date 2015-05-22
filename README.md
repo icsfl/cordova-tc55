@@ -5,6 +5,7 @@ This works by setting up a DataWedge profile that has an Intent Output.
 # Device Setup
 - Open the DataWedge App
 - Create a new profile (enabled)
+- Under `Associated apps` select your application
 - Under `Barcode Input`, check the `Enabled` setting
 - Under `Keystoke Output`, leave the `Enabled` setting unchecked
 - Under `Intent Output`:
